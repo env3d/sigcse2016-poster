@@ -1,135 +1,298 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>SIGCSE 2026 - Sovereign AI Framework</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css">
-		<style>
-			:root { --reveal-background-color: #fff; --reveal-main-font-size: 28px; }
-			.reveal h1, .reveal h2 { text-transform: uppercase; font-weight: 800; border-bottom: 4px solid #000; }
-			.reveal pre { background: #f0f0f0; border: 1px solid #000; box-shadow: none; }
-			.module-id { position: absolute; bottom: -20px; right: 0; font-family: monospace; font-size: 0.5em; color: #888; }
-			.stat-big { font-size: 4em; font-weight: 900; }
-			.quote { font-style: italic; border-left: 10px solid #000; padding-left: 20px; }
-		</style>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
 
-				<section>
-					<h2>Local LLMs in the Classroom</h2>
-					<p>A Privacy-Preserving, Zero-Cost Framework</p>
-					<hr>
-					<p><strong>Jason • Langara College / Capilano University</strong></p>
-					<p>SIGCSE TS 2026 // St. Louis, MO</p>
-					<div class="module-id">MOD_01 // IDENTITY</div>
-				</section>
+<head>
+    <meta charset="utf-8">
+    <title>Sovereign AI in CS Education - SIGCSE 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css">
+    <style>
+        :root {
+            --reveal-background-color: #fff;
+        }
 
-				<section>
-					<h3>The Friction</h3>
-					<ul>
-						<li><strong>Cost:</strong> API credits drain departmental budgets.</li>
-						<li><strong>Privacy:</strong> FERPA/FOIPPA risks with 3rd-party LLMs.</li>
-						<li><strong>Complexity:</strong> Student environment "hell" (Python/Cuda).</li>
-					</ul>
-					<div class="module-id">MOD_02 // CONTEXT</div>
-				</section>
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            text-transform: uppercase;
+            font-weight: 800;
+            border-bottom: 3px solid #000;
+            padding-bottom: 10px;
+        }
 
-				<section>
-					<h3>The Technical Stack</h3>
-					<p>GitHub Codespaces + llama.cpp + Qwen 2.5 (0.5B)</p>
-					<pre><code>[ Browser ] -> [ Cloud VM (Codespaces) ] 
-                   |
-                   +-> [ Local Inference (C++) ]
-                       |
-                       +-> [ 4-bit Quantized Model ]</code></pre>
-					<div class="module-id">MOD_03 // ARCHITECTURE</div>
-				</section>
+        .reveal pre {
+            background: #fdfdfd;
+            border: 1px solid #000;
+            box-shadow: none;
+            width: 100%;
+        }
 
-				<section>
-					<h3>Battle Tested</h3>
-					<div class="stat-big">100+</div>
-					<p>Successful student deployments across CS1 and Systems courses.</p>
-					<p><strong>Infrastructure Failure Rate: 0%</strong></p>
-					<div class="module-id">MOD_04 // VALIDATION</div>
-				</section>
+        .module-id {
+            position: absolute;
+            bottom: -30px;
+            right: 0;
+            font-family: monospace;
+            font-size: 0.4em;
+            color: #aaa;
+        }
 
-				<section>
-					<h3>LLM as a Primitive</h3>
-					<pre><code class="python"># No API Keys. No Latency.
-from llm_local import chat
+        .stat-big {
+            font-size: 3.5em;
+            font-weight: 900;
+            line-height: 1;
+            margin: 20px 0;
+        }
 
-response = chat("What is a pointer?")
-print(response)</code></pre>
-					<p>We treat the LLM as a standard I/O library.</p>
-					<div class="module-id">MOD_05 // IMPLEMENTATION</div>
-				</section>
+        .interaction-box {
+            text-align: left;
+            background: #f0f0f0;
+            padding: 15px;
+            border: 1px solid #000;
+            font-size: 0.55em;
+        }
 
-				<section>
-					<h3 class="quote">"It's a mirror, not a mind."</h3>
-					<p>Students move from treating LLMs as "magic" to treating them as <strong>stochastic probability engines.</strong></p>
-					<div class="module-id">MOD_06 // PEDAGOGY</div>
-				</section>
+        .instructor-note {
+            color: #444;
+            border-left: 5px solid #000;
+            padding-left: 10px;
+            margin-top: 10px;
+            font-style: italic;
+        }
 
-				<section>
-					<h3>CS1: Computational Thinking</h3>
-					<ul>
-						<li>Using LLMs in loops to test edge cases.</li>
-						<li>Understanding <strong>Temperature</strong> as variance.</li>
-						<li>Code reviews performed by 100% private models.</li>
-					</ul>
-					<div class="module-id">MOD_07 // CS1</div>
-				</section>
+        .reveal ul {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
 
-				<section>
-					<h3>Systems: Linux & C++</h3>
-					<ul>
-						<li>Compiling <code>llama.cpp</code> from source.</li>
-						<li>Observing memory pressure on 1-core VMs.</li>
-						<li>JSON streaming via standard pipes.</li>
-					</ul>
-					<div class="module-id">MOD_08 // SYSTEMS</div>
-				</section>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Local LLMs in the Classroom</h2>
+                <p>A Privacy-Preserving, Zero-Cost Framework</p>
+                <hr>
+                <p><strong>Jason • Langara College / Capilano University</strong></p>
+                <p>SIGCSE TS 2026 // St. Louis, MO</p>
+                <div class="module-id">MOD_01 // IDENTITY</div>
+            </section>
 
-				<section>
-					<h3>Efficiency Stats</h3>
-					<ul>
-						<li><strong>Model Size:</strong> 350MB (Qwen 0.5B 4-bit).</li>
-						<li><strong>Inference Speed:</strong> ~30 tokens/sec (CPU).</li>
-						<li><strong>Setup Time:</strong> < 90 seconds per student.</li>
-					</ul>
-					<div class="module-id">MOD_09 // PERFORMANCE</div>
-				</section>
+            <section>
+                <h3>The "API Trap"</h3>
+                <ul>
+                    <li><strong>Financial:</strong> Variable costs and credit management for 100+ students.</li>
+                    <li><strong>Privacy:</strong> Legislation and third-party data "harvesting."</li>
+                    <li><strong>Pedagogy:</strong> LLMs as "Black Boxes" rather than programmable components.</li>
+                </ul>
+                <div class="module-id">MOD_02 // CONTEXT</div>
+            </section>
 
-				<section>
-					<h3>Sovereign AI</h3>
-					<p>Data stays within the student's container.</p>
-					<p>Zero data leakage to OpenAI, Google, or Anthropic.</p>
-					<div class="module-id">MOD_10 // ETHICS</div>
-				</section>
+            <section>
+                <h3>The System Architecture</h3>
+                <p>Deployable in < 90 seconds via GitHub Codespaces.</p>
+                        <pre><code class="text">
+[ IDE (Browser) ] <---> [ Codespace (Cloud VM) ]
+                           |
+                           +-- [ llama.cpp (C++) ]
+                               |
+                               +-- [ Qwen 2.5 (0.5B) ]
+                </code></pre>
+                        <p style="font-size: 0.6em;">Zero local install. 100% private. 1-Core CPU sufficient.</p>
+                        <div class="module-id">MOD_03 // ARCHITECTURE</div>
+            </section>
 
-				<section>
-					<h3>Future Work: VaultMini</h3>
-					<p>Scaling from Classroom to <strong>Sovereign Hardware Appliances</strong>.</p>
-					<p>Education Sabbatical (Sept 2026) focus: Edge-AI Security.</p>
-					<div class="module-id">MOD_11 // ROADMAP</div>
-				</section>
+            <section>
+                <h3>Deployment Velocity</h3>
+                <div class="stat-big">100+</div>
+                <p>Successful student instances across CS1 & Systems courses.</p>
+                <p><strong>Infrastructure Cost: $0.00</strong></p>
+                <div class="module-id">MOD_04 // PROOF</div>
+            </section>
 
-				<section>
-					<h3>Fork the Framework</h3>
-					<p>[ LARGE QR CODE HERE ]</p>
-					<p>github.com/your-repo-link</p>
-					<div class="module-id">MOD_12 // CTA</div>
-				</section>
+            <section>
+                <h3>LLM as a Primitive</h3>
+                <p>Abstracting inference into a standard I/O library.</p>
+                <pre><code class="python">
+from chat import chat # chat function works like a normal primitive
 
-			</div>
-		</div>
+# Inference occurs entirely within 
+# the student's own container.
+response = chat("Define a pointer.")
+print(response)
+                </code></pre>
+                <div class="module-id">MOD_05 // INTERFACE</div>
+            </section>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
-		<script>
-			Reveal.initialize({ center: true, transition: 'none' });
-		</script>
-	</body>
+            <section>
+                <h3>The Chat Loop</h3>
+                <p>A standard CS1 exercise: Managing state.</p>
+                <pre><code class="python" style="font-size: 0.8em;">
+prompt = [{"role": "system", "content": "You are a tutor"}]
+while True:
+    user_in = input("You: ")
+    prompt.append({"role": "user", "content": user_in})
+    
+    reply = chat(prompt)
+    prompt.append({"role": "assistant", "content": reply})
+                </code></pre>
+                <div class="module-id">MOD_06 // IMPLEMENTATION</div>
+            </section>
+
+            <section>
+                <h3>The Core Thesis</h3>
+                <blockquote style="font-size: 1.5em; font-style: italic;">
+                    "It's a mirror, not a mind."
+                </blockquote>
+                <p>Shift focus from "AI Magic" to <strong>Stochastic Probability Engines</strong>.</p>
+                <div class="module-id">MOD_07 // PEDAGOGY</div>
+            </section>
+
+            <section>
+                <h3>AI Literacy</h3>
+                <ul>
+                    <li><strong>Temperature:</strong> Witnessing math-driven randomness.</li>
+                    <li><strong>Context:</strong> Understanding token limits and memory pressure.</li>
+                    <li><strong>Prompting:</strong> Moving from "Questions" to "System Instructions."</li>
+                </ul>
+                <div class="module-id">MOD_08 // LITERACY</div>
+            </section>
+
+            <section>
+                <h3>Efficiency Specs</h3>
+                <ul>
+                    <li><strong>Footprint:</strong> ~350MB RAM for 0.5B 4-bit model.</li>
+                    <li><strong>Throughput:</strong> ~30 tokens/sec (CPU-only).</li>
+                    <li><strong>Portability:</strong> Runs on any environment that supports Docker/Codespaces.</li>
+                </ul>
+                <div class="module-id">MOD_09 // PERFORMANCE</div>
+            </section>
+
+            <section>
+                <h3>The Teachable Moment</h3>
+                <div class="interaction-box">
+                    <strong>Student:</strong> "My code passes the pytests and history appends, but the bot won't add
+                    correctly. What am I doing wrong?"
+                    <div class="instructor-note">
+                        <strong>Instructor:</strong> "Nothing. Small LLMs are bad at math. It's not your code; it's the
+                        model's capacity. Try different context."
+                    </div>
+                </div>
+                <p style="font-size: 0.6em; margin-top: 15px;">Result: Student identifies the boundary between
+                    <strong>System Logic</strong> and <strong>Model Intelligence</strong>.
+                </p>
+                <div class="module-id">MOD_10 // INTERACTION</div>
+            </section>
+
+            <section>
+                <h3>Why Ownership Matters</h3>
+                <ul>
+                    <li><strong>Ethics:</strong> No student data is "productized" for model training.</li>
+                    <li><strong>Equity:</strong> High-performance AI for students without GPUs.</li>
+                    <li><strong>Sustainability:</strong> Decoupling education from Silicon Valley API cycles.</li>
+                </ul>
+                <div class="module-id">MOD_11 // ETHICS</div>
+            </section>
+
+            <section>
+                <h3>Fork & Deploy</h3>
+                <div
+                    style="display: flex; flex-direction: column; gap: 0px; text-align: left; font-family: 'Inter', sans-serif;">
+
+                    <div
+                        style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                        <img width="120" style="background: white; padding: 0px; border-radius: 4px;"
+                            src="literacy.png" />
+                        <div>
+                            <strong style="color: #58a6ff; font-size: 0.8em; letter-spacing: 1px;">[ CS/AI LITERACY
+                                ]</strong> AI Stochasticity
+                            <code
+                                style="font-size: 0.5em; color: #8b949e; background: #161b22; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 5px;">https://github.com/env3d-lessons/python-thinkcspy-chapter-04</code>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                        <img width="120" style="background: white; padding: 0px; border-radius: 4px;"
+                            src="chatbot.png" />
+                        <div>
+                            <strong style="color: #58a6ff; font-size: 0.8em; letter-spacing: 1px;">[ CS1 / PYTHON
+                                ]</strong>
+                            Chatbot Construction
+                            <code
+                                style="font-size: 0.5em; color: #8b949e; background: #161b22; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 5px;">https://github.com/env3d/cs1-llm-local-chatbot</code>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                        <img width="120" style="background: white; padding: 0px; border-radius: 4px;" src="linux.png" />
+                        <div>
+                            <strong style="color: #58a6ff; font-size: 0.8em; letter-spacing: 1px;">[ Linux / Bash
+                                ]</strong>
+                            Parsing LLM Streams
+                            <code
+                                style="font-size: 0.5em; color: #8b949e; background: #161b22; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 5px;">https://github.com/env3d-lessons/linux-llama-cpp-bash</code>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="module-id">MOD_12 // CTA</div>
+            </section>
+
+            <section>
+                <h3 style="margin-bottom: 20px;">Fork & Deploy</h3>
+                <div
+                    style="display: flex; flex-direction: column; gap: 10px; text-align: left; font-family: monospace;">
+
+                    <div
+                        style="display: flex; align-items: center; gap: 20px; border: 1px solid #eee; padding: 10px; border-radius: 4px;">
+                        <img width="100" style="aspect-ratio: 1/1; object-fit: contain;" src="literacy.png" />
+                        <div style="flex-grow: 1;">
+                            <strong style="color: #000; font-size: 0.7em;">[ CS/AI LITERACY ]</strong>
+                            <div style="font-size: 0.55em; margin: 4px 0;">Topic: Stochasticity & Temperature</div>
+                            <code
+                                style="font-size: 0.45em; color: #58a6ff; background: #f6f8fa; padding: 4px; border-radius: 3px; display: block; border: 1px solid #d0d7de;">https://github.com/env3d-lessons/python-thinkcspy-chapter-04</code>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display: flex; align-items: center; gap: 20px; border: 1px solid #eee; padding: 10px; border-radius: 4px;">
+                        <img width="100" style="aspect-ratio: 1/1; object-fit: contain;" src="chatbot.png" />
+                        <div style="flex-grow: 1;">
+                            <strong style="color: #000; font-size: 0.7em;">[ CS1 / PYTHON ]</strong>
+                            <div style="font-size: 0.55em; margin: 4px 0;">Topic: Chatbot Construction & State</div>
+                            <code
+                                style="font-size: 0.45em; color: #58a6ff; background: #f6f8fa; padding: 4px; border-radius: 3px; display: block; border: 1px solid #d0d7de;">https://github.com/env3d/cs1-llm-local-chatbot</code>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display: flex; align-items: center; gap: 20px; border: 1px solid #eee; padding: 10px; border-radius: 4px;">
+                        <img width="100" style="aspect-ratio: 1/1; object-fit: contain;" src="linux.png" />
+                        <div style="flex-grow: 1;">
+                            <strong style="color: #000; font-size: 0.7em;">[ LINUX / BASH ]</strong>
+                            <div style="font-size: 0.55em; margin: 4px 0;">Topic: Parsing LLM Streams</div>
+                            <code
+                                style="font-size: 0.45em; color: #58a6ff; background: #f6f8fa; padding: 4px; border-radius: 3px; display: block; border: 1px solid #d0d7de;">https://github.com/env3d-lessons/linux-llama-cpp-bash</code>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="module-id">MOD_12 // CTA</div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            center: true,
+            transition: 'none',
+            pdfMaxPagesPerSlide: 1
+        });
+    </script>
+</body>
+
 </html>
