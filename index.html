@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SIGCSE 2026 - Sovereign AI Framework</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css">
+		<style>
+			:root { --reveal-background-color: #fff; --reveal-main-font-size: 28px; }
+			.reveal h1, .reveal h2 { text-transform: uppercase; font-weight: 800; border-bottom: 4px solid #000; }
+			.reveal pre { background: #f0f0f0; border: 1px solid #000; box-shadow: none; }
+			.module-id { position: absolute; bottom: -20px; right: 0; font-family: monospace; font-size: 0.5em; color: #888; }
+			.stat-big { font-size: 4em; font-weight: 900; }
+			.quote { font-style: italic; border-left: 10px solid #000; padding-left: 20px; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h2>Local LLMs in the Classroom</h2>
+					<p>A Privacy-Preserving, Zero-Cost Framework</p>
+					<hr>
+					<p><strong>Jason • Langara College / Capilano University</strong></p>
+					<p>SIGCSE TS 2026 // St. Louis, MO</p>
+					<div class="module-id">MOD_01 // IDENTITY</div>
+				</section>
+
+				<section>
+					<h3>The Friction</h3>
+					<ul>
+						<li><strong>Cost:</strong> API credits drain departmental budgets.</li>
+						<li><strong>Privacy:</strong> FERPA/FOIPPA risks with 3rd-party LLMs.</li>
+						<li><strong>Complexity:</strong> Student environment "hell" (Python/Cuda).</li>
+					</ul>
+					<div class="module-id">MOD_02 // CONTEXT</div>
+				</section>
+
+				<section>
+					<h3>The Technical Stack</h3>
+					<p>GitHub Codespaces + llama.cpp + Qwen 2.5 (0.5B)</p>
+					<pre><code>[ Browser ] -> [ Cloud VM (Codespaces) ] 
+                   |
+                   +-> [ Local Inference (C++) ]
+                       |
+                       +-> [ 4-bit Quantized Model ]</code></pre>
+					<div class="module-id">MOD_03 // ARCHITECTURE</div>
+				</section>
+
+				<section>
+					<h3>Battle Tested</h3>
+					<div class="stat-big">100+</div>
+					<p>Successful student deployments across CS1 and Systems courses.</p>
+					<p><strong>Infrastructure Failure Rate: 0%</strong></p>
+					<div class="module-id">MOD_04 // VALIDATION</div>
+				</section>
+
+				<section>
+					<h3>LLM as a Primitive</h3>
+					<pre><code class="python"># No API Keys. No Latency.
+from llm_local import chat
+
+response = chat("What is a pointer?")
+print(response)</code></pre>
+					<p>We treat the LLM as a standard I/O library.</p>
+					<div class="module-id">MOD_05 // IMPLEMENTATION</div>
+				</section>
+
+				<section>
+					<h3 class="quote">"It's a mirror, not a mind."</h3>
+					<p>Students move from treating LLMs as "magic" to treating them as <strong>stochastic probability engines.</strong></p>
+					<div class="module-id">MOD_06 // PEDAGOGY</div>
+				</section>
+
+				<section>
+					<h3>CS1: Computational Thinking</h3>
+					<ul>
+						<li>Using LLMs in loops to test edge cases.</li>
+						<li>Understanding <strong>Temperature</strong> as variance.</li>
+						<li>Code reviews performed by 100% private models.</li>
+					</ul>
+					<div class="module-id">MOD_07 // CS1</div>
+				</section>
+
+				<section>
+					<h3>Systems: Linux & C++</h3>
+					<ul>
+						<li>Compiling <code>llama.cpp</code> from source.</li>
+						<li>Observing memory pressure on 1-core VMs.</li>
+						<li>JSON streaming via standard pipes.</li>
+					</ul>
+					<div class="module-id">MOD_08 // SYSTEMS</div>
+				</section>
+
+				<section>
+					<h3>Efficiency Stats</h3>
+					<ul>
+						<li><strong>Model Size:</strong> 350MB (Qwen 0.5B 4-bit).</li>
+						<li><strong>Inference Speed:</strong> ~30 tokens/sec (CPU).</li>
+						<li><strong>Setup Time:</strong> < 90 seconds per student.</li>
+					</ul>
+					<div class="module-id">MOD_09 // PERFORMANCE</div>
+				</section>
+
+				<section>
+					<h3>Sovereign AI</h3>
+					<p>Data stays within the student's container.</p>
+					<p>Zero data leakage to OpenAI, Google, or Anthropic.</p>
+					<div class="module-id">MOD_10 // ETHICS</div>
+				</section>
+
+				<section>
+					<h3>Future Work: VaultMini</h3>
+					<p>Scaling from Classroom to <strong>Sovereign Hardware Appliances</strong>.</p>
+					<p>Education Sabbatical (Sept 2026) focus: Edge-AI Security.</p>
+					<div class="module-id">MOD_11 // ROADMAP</div>
+				</section>
+
+				<section>
+					<h3>Fork the Framework</h3>
+					<p>[ LARGE QR CODE HERE ]</p>
+					<p>github.com/your-repo-link</p>
+					<div class="module-id">MOD_12 // CTA</div>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+		<script>
+			Reveal.initialize({ center: true, transition: 'none' });
+		</script>
+	</body>
+</html>
