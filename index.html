@@ -79,7 +79,7 @@
                         <img width="110" src="slides-url.png"
                             style="border: 2px solid #000; padding: 5px; background: #fff;">
                         <div style="font-family: monospace; font-size: 0.3em; margin-top: 5px; font-weight: 800;">[
-                            DECK_URL ]</div>
+                            https://env3d.github.io/sigcse2026-poster/ ]</div>
                     </div>
                 </div>
 
@@ -87,7 +87,7 @@
 
                 <div style="text-align: left;">
                     <p style="margin-top: 20px;">A Privacy-Preserving, Zero-Cost Framework</p>
-                    <p><strong>Jason • Langara College / Capilano University</strong></p>
+                    <p><strong>Jason Madar • Langara College / Capilano University</strong></p>
                     <p style="font-size: 0.8em; opacity: 0.6;">SIGCSE TS 2026 // St. Louis, MO</p>
                 </div>
 
@@ -95,7 +95,7 @@
             </section>
 
             <section>
-                <h3>The "API Trap"</h3>
+                <h3>The API Trap</h3>
                 <ul>
                     <li><strong>Financial:</strong> Variable costs and credit management for 100+ students.</li>
                     <li><strong>Privacy:</strong> Legislation and third-party data "harvesting."</li>
@@ -106,15 +106,15 @@
 
             <section>
                 <h3>The System Architecture</h3>
-                <p>Deployable in < 90 seconds via GitHub Codespaces.</p>
-                        <pre><code class="text">
+                <p>Deployable in ~90 seconds via GitHub Codespaces.</p>
+                        <pre><code class="text" style="font-size: 1.3em">
 [ IDE (Browser) ] <---> [ Codespace (Cloud VM) ]
                            |
                            +-- [ llama.cpp (C++) ]
                                |
                                +-- [ Qwen 2.5 (0.5B) ]
                 </code></pre>
-                        <p style="font-size: 0.6em;">Zero local install. 100% private. 1-Core CPU sufficient.</p>
+                        <p style="font-size: 0.6em;">Zero local install. 100% private.</p>
                         <div class="module-id">MOD_03 // ARCHITECTURE</div>
             </section>
 
@@ -122,7 +122,7 @@
                 <h3>Deployment Velocity</h3>
                 <div class="stat-big">100+</div>
                 <p>Successful student instances across CS1 & Systems courses.</p>
-                <p><strong>Infrastructure Cost: $0.00</strong></p>
+                <p style="font-size: 1.5em"><strong>Infrastructure Cost: $0.00</strong></p>
                 <div class="module-id">MOD_04 // PROOF</div>
             </section>
 
@@ -174,25 +174,25 @@ while True:
                 <div class="module-id">MOD_08 // LITERACY</div>
             </section>
 
-<section>
-    <h3>Efficiency Specs</h3>
-    <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 40px;">
-        <div style="text-align: center; border: 2px solid #000; padding: 20px; width: 30%;">
-            <div style="font-size: 2em; font-weight: 900;">350MB</div>
-            <div style="font-size: 0.5em; font-family: monospace;">RAM FOOTPRINT</div>
-        </div>
-        <div style="text-align: center; border: 2px solid #000; padding: 20px; width: 30%;">
-            <div style="font-size: 2em; font-weight: 900;">5-10</div>
-            <div style="font-size: 0.5em; font-family: monospace;">TOKENS / SEC</div>
-        </div>
-    </div>
-    <ul style="margin-top: 40px;">
-        <li><strong>Hardware:</strong> 2-Core CPU 8GB RAM (Free Tier).</li>
-        <li><strong>Model:</strong> Qwen 2.5 0.5B (4-bit GGUF quantization).</li>
-        <li><strong>Portability:</strong> Zero local dependencies; runs in-browser.</li>
-    </ul>
-    <div class="module-id">MOD_09 // PERFORMANCE</div>
-</section>
+            <section>
+                <h3>Efficiency Specs</h3>
+                <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 40px;">
+                    <div style="text-align: center; border: 2px solid #000; padding: 20px; width: 30%;">
+                        <div style="font-size: 2em; font-weight: 900;">350MB</div>
+                        <div style="font-size: 0.5em; font-family: monospace;">RAM FOOTPRINT</div>
+                    </div>
+                    <div style="text-align: center; border: 2px solid #000; padding: 20px; width: 30%;">
+                        <div style="font-size: 2em; font-weight: 900;">5-10</div>
+                        <div style="font-size: 0.5em; font-family: monospace;">TOKENS / SEC</div>
+                    </div>
+                </div>
+                <ul style="margin-top: 40px;">
+                    <li><strong>Hardware:</strong> 2-Core CPU 8GB RAM (Free Tier).</li>
+                    <li><strong>Model:</strong> Qwen 2.5 0.5B (4-bit GGUF quantization).</li>
+                    <li><strong>Portability:</strong> Zero local dependencies; runs in-browser.</li>
+                </ul>
+                <div class="module-id">MOD_09 // PERFORMANCE</div>
+            </section>
 
             <section>
                 <h3>The Teachable Moment</h3>
@@ -214,7 +214,7 @@ while True:
                 <h3>Why Ownership Matters</h3>
                 <ul>
                     <li><strong>Ethics:</strong> No student data is "productized" for model training.</li>
-                    <li><strong>Equity:</strong> High-performance AI for students without GPUs.</li>
+                    <li><strong>Equity:</strong> Observable AI for students without GPUs.</li>
                     <li><strong>Sustainability:</strong> Decoupling education from Silicon Valley API cycles.</li>
                 </ul>
                 <div class="module-id">MOD_11 // ETHICS</div>
@@ -239,10 +239,15 @@ while True:
                     </div>
 
                     <div
-                        style="display: flex; align-items: center; gap: 20px; border: 1px solid #eee; padding: 10px; border-radius: 4px;">
+                        style="display: flex; align-items: center; gap: 20px; border: 2px solid #000; padding: 10px; border-radius: 4px; background: #fff;">
                         <img width="100" style="aspect-ratio: 1/1; object-fit: contain;" src="chatbot.png" />
                         <div style="flex-grow: 1;">
-                            <strong style="color: #000; font-size: 0.7em;">[ CS1 / PYTHON ]</strong>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong style="color: #000; font-size: 0.7em;">[ CS1 / PYTHON ]</strong>
+                                <span
+                                    style="background: #000; color: #fff; font-size: 0.4em; padding: 2px 6px; font-weight: bold; border-radius: 2px;">NIFTY
+                                    ASSIGNMENT 2026</span>
+                            </div>
                             <div style="font-size: 0.55em; margin: 4px 0;">Topic: Chatbot Construction & State</div>
                             <a href="https://github.com/env3d/cs1-llm-local-chatbot" target="_blank">
                                 <code
